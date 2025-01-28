@@ -5,7 +5,7 @@ import Home from './pages/home/Home'
 function App() {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <Home />
       <Footer />
     </>
