@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 function Navbar() {
     return (
         <>
@@ -7,8 +9,8 @@ function Navbar() {
                     Farmácia
 
                     <div className='flex gap-5'>
-                        <div>Listar Categorias</div>
-                        <div>Cadastrar/Atualizar</div>
+                        <div><Link to='/categorias' className='hover:underline'>Categorias</Link></div>
+                        <div><Link to='/cadastrarcategoria' className='hover:underline'>Cadastrar/Atualizar</Link></div>
                         <div>Deletar</div>
                     </div>
                 </div>
