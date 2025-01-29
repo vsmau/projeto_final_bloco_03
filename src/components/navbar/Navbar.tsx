@@ -6,12 +6,11 @@ function Navbar() {
             <div className='w-full flex justify-center py-4 bg-indigo-900 text-white'>
             
                 <div className="container flex justify-between text-lg">
-                    Farmácia
+                <Link to='/home' className="text-2xl font-bold">Farmácia</Link>
 
                     <div className='flex gap-5'>
                         <div><Link to='/categorias' className='hover:underline'>Categorias</Link></div>
                         <div><Link to='/cadastrarcategoria' className='hover:underline'>Cadastrar/Atualizar</Link></div>
-                        <div>Deletar</div>
                     </div>
                 </div>
             </div>

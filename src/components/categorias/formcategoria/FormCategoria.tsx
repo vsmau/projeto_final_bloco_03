@@ -1,11 +1,12 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { RotatingLines } from "react-loader-spinner";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Categoria from "../../../models/Categoria";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 
 function FormCategoria() {
 
+    const navigate = useNavigate();
 
     const [categoria, setCategoria] = useState<Categoria>({} as Categoria)
     const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -28,6 +29,10 @@ function FormCategoria() {
         })
     }
 
+    function retornar() {
+        navigate("/categorias")
+    }
+
     async function gerarNovoCategoria(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
         setIsLoading(true)
@@ -41,10 +46,11 @@ function FormCategoria() {
         }
 
         setIsLoading(false)
+        retornar()
     }
 
     return (
-        <div className="container flex flex-col items-center justify-center mx-auto">
+        <div className="container flex flex-col items-center justify-center mx-auto min-h-[75vh]">
             <h1 className="text-4xl text-center my-8">
                 {id === undefined ? 'Cadastrar Categoria' : 'Editar Categoria'}
             </h1>
